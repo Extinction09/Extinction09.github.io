@@ -6,35 +6,48 @@
     </head>
 
     <body>
+        <button onclick="save()">SAVE!</button>
+        <div style='margin-left:auto; margin-right:auto; width:95%;'>
         <h1>Rock Corp</h1>
-        <hr>
+            <hr>
         <h2>Total Money:</h2>
         <h2>$<span id="money">0</span></h2>
-        <br />
-        <sub>Click this to mine <strong>Sandstone!</strong></sub>
-        <br />
-        <button onclick="sandstoneClick(1)">Mine Sandstone</button>
-        <br />
-        <span id="sandstone">0</span> Sandstone
-        <br />
-        <br />
-        <button onclick="buySandstoneMiner()">Buy Sandstone Miner</button>
-        <br />
-        <span id="sandstoneMiner">0</span> Sandstone Miner
-        <br />
-        Sandstone Miner Cost: $<span id="sandstoneMinerCost">30</span>
-        <br />
-        <br />
-        <button onclick="buySAutoSeller()">Buy Small Auto Seller</button>
-        <br>
-        <span id="sAutoSeller">0</span> Small Auto Seller
-        <br>
-        Small Auto Seller Cost: $<span id="sAutoSellerCost">50</span>
-        <br>
-        <br>
-        <button onclick="sellSandstone()">Sell Sandstone</button>
+            <br>
+            Current Sandstone Storage: <span id="sandstone">0</span>/<span id="sandstoneCapacity">30</span>
+            <br>
+            <sub>Click this to mine <strong>Sandstone!</strong></sub>
+            <br>
+            <button onclick="sandstoneClick(1)">Mine Sandstone</button>
+            <hr>
+        <h2>Auto Miners:</h2>
+            <button onclick="buySandstoneMiner()">Buy Sandstone Miner</button>
+            <br>
+            <span id="sandstoneMiner">0</span> Sandstone Miner
+            <br>
+            Sandstone Miner Cost: $<span id="sandstoneMinerCost">30</span>
+            <br>
+            $<span id="currentUpkeep">0</span> Upkeep
+            <hr>
+        <h2>Auto Sellers:</h2>
+            <button onclick="buySAutoSeller()">Buy Small Auto Seller</button>
+            <br>
+            <span id="sAutoSeller">0</span> Small Auto Seller
+            <br>
+            Small Auto Seller Cost: $<span id="sAutoSellerCost">50</span>
+            <hr>
+        <h2>Storage Units:</h2>
+            <br>
+            <button onclick="buySStorage()">Buy Small Storage Unit</button>
+            <br>
+            <span id="sStorage">1</span> Small Storage Unit
+            <br>
+            Small Storage Unit Cost: $<span id="sStorageCost">25</span>
+            <br>
+            <hr>
+            <button onclick="sellSandstone()">Sell Sandstone</button>
 
 
         <script type="text/javascript" src="JSxFiles/game.js"></script>
+        </div>
     </body>
 </html>
