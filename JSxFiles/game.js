@@ -109,7 +109,7 @@ var sAutoSeller = 0;
 function buySAutoSeller() {
     var sAutoSellerCost = Math.floor(50 * Math.pow(1.13, sAutoSeller));
     if(money >= sAutoSellerCost) {
-        if(sAutoSeller < sandstoneMiner) {
+        if(sandstoneMiner > sAutoSeller) {
             sAutoSeller = sAutoSeller + 1;
             money = money - sAutoSellerCost;
             document.getElementById('sAutoSeller').innerHTML = sAutoSeller;
