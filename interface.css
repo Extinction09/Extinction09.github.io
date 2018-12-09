@@ -1,0 +1,124 @@
+html {
+    background-color: rgb(48, 48, 48)
+}
+h1 {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    color:white;
+    font-size: 45px
+}
+sub {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-transform: none;
+    text-align: left;
+    color:white;
+    font-size: 16px
+}
+h2 {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-transform: none;
+    text-align: center;
+    color:rgb(255, 255, 255);
+    font-size: 36px
+}
+h3 {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-transform: none;
+    text-align: center;
+    color:white;
+    font-size: 32px
+}
+h4 {
+  font-family: Tahoma, Geneva, sans-serif;
+    text-transform: none;
+    text-align: center;
+    color:white;
+    padding: 0px 0px;
+    font-size: 24px
+}
+p {
+  font-family: Tahoma, Geneva, sans-serif;
+    text-transform: none;
+    text-align: center;
+    color:rgb(66, 66, 66);
+    font-size: 24px
+}
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Tahoma, Geneva, sans-serif;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 24px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  .block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: gray;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .block2 {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #555;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .btn {
+    background-color: gray;
+    border: none;
+    color: black;
+    padding: 12px 24px;
+    text-align: left;
+    font-size: 16px;
+    margin: 5px 16px;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background-color: white;
+    color: black;
+  }
+  .block2:hover {
+    background-color: white;
+    color: black;
+  }
+  table, th, td{
+    border: 1px solid gray;
+    border-collapse: collapse;
+  }
+  #Provinces {background-color: gray;}
+  #Research {background-color: gray;}
+  #Overview {background-color: gray;}
+  #Military {background-color: gray;}
