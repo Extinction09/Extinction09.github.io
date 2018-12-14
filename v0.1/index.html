@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Militaristic Pope Boi</title>
+        <link rel="stylesheet" type="text/css" href="interface.css" />
+    </head>
+
+    <body>
+        <sub>
+        <br>
+        <h3>Welcome to:</h3><h2><span id="result"><h2>Who you gonna be?</h2></span></h2>
+        <br>
+        <!--<h3>Custom Country Name: <input type="name" id="countryName" value=""></h3>-->
+                <br>
+                <p><button class="btn" onclick="generate()">Random Nation Name</button></p>
+                <br>
+                <br>
+        <button class="tablink" onclick="openPage('Provinces', this, 'gray')" id="defaultOpen">Provinces</button>
+        <button class="tablink" onclick="openPage('Research', this, 'gray')" >Research</button>
+        <button class="tablink" onclick="openPage('Military', this, 'gray')">Military</button>
+        <button class="tablink" onclick="openPage('Overview', this, 'gray')">Overview</button>
+
+            <div id="Provinces" class="tabcontent">
+                <h3>Provinces</h3>
+                    <p>The clay.</p>
+                    <h4>Total Provinces: <span id="totalProv"><p>1</p></span></h4>
+                    <h3>
+                    <table style="width:100%">
+                        <tr>
+                          <th><p>Total Development</p></th>
+                          <th><p>Tax Development</p><p><button class="block2" onclick="devProvTypeTax()">Develop Taxation</button></p></th> 
+                          <th><p>Production Development</p><p><button class="block2" onclick="devProvTypeProduction()">Develop Production</button></p></th>
+                          <th><p>Military Development</p><p><button class="block2" onclick="devProvTypeManpower()">Develop Military</button></p></th>
+                        </tr>
+                        <tr>
+                          <td><span id="totalDev">3</span></td>
+                          <td><span id="pTax">1</span></td> 
+                          <td><span id="pProduction">1</span></td>
+                          <td><span id="pManpower">1</span></td>
+                        </tr>
+                        
+                       
+                      </table>
+                      </h3>
+            </div>
+
+            <div id="Research" class="tabcontent">
+                <h3>Technologies</h3>
+                    <p>Make supersoldiers or something I don't know.</p> 
+            </div>
+
+            <div id="Military" class="tabcontent">
+                <h3>Military</h3>
+                    <p>When the sword is mightier than the pen.</p>
+            </div>
+            
+            <div id="Overview" class="tabcontent">
+                <h3>Overview</h3>
+                    <p>Enjoy getting to look at better countries than yours.</p>
+            </div>
+
+        <script>
+                function myFunction() {
+                    var x = document.getElementById("countryName").value;
+                    document.getElementById("countryName").innerHTML = x;
+                }
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    </sub>
+    </body>
+</html>
