@@ -5,14 +5,14 @@ var player = {
         provinces: 1,
         manpower: 0,
         income: 0,
-        totalMoney: 700,
+        totalMoney: 100,
         totalMoneyEarned: 0,
         population: 0,
         
     //province stats
         provTypeTax: 1,
         provTypeManpower: 1,
-        provManpowerIncome: 0.1,
+        provManpowerIncome: 0.05,
         provTypeProduction: 1,
         developmentCost: 10,
     //province stats - buildings
@@ -165,7 +165,7 @@ function generate() {
 
 //buy province
 function buyProvince() {
-    var provCost = Math.floor(100 * Math.pow(1.10, (player.provinces - 1)));
+    var provCost = Math.floor(20 * Math.pow(1.10, (player.provinces - 1)));
     if (player.totalMoney >= provCost) {
         player.totalMoney = player.totalMoney - provCost;
         player.provinces++;
@@ -176,12 +176,12 @@ function buyProvince() {
         document.getElementById('pTax').innerHTML = player.provTypeTax;
         document.getElementById('pProduction').innerHTML = player.provTypeProduction;
         document.getElementById('pManpower').innerHTML = player.provTypeManpower;
-        document.getElementById('totalDev').innerHTML = totalDevelopment;
         document.getElementById('income').innerHTML = player.income;
+        document.getElementById('provCost').innerHTML = provCost;
     } else {
         return;
     };
-    var nextCost = Math.floor(100 * Math.pow(1.10, (player.provinces - 1)));
+    var nextCost = Math.floor(20 * Math.pow(1.10, (player.provinces - 1)));
     document.getElementById('provCost').innerHTML = nextCost;
 };
 
@@ -203,25 +203,26 @@ function getDev() {
 };
 
 function getMoney() {
-    document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(1);
+    document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
 };
 
 function getIncome() {
-    var totalIncome  
+    document.getElementById('income').innerHTML = player.income.toFixed(2);
 };
 
 
 //develop provTypeTax
 function devProvTypeTax() {
-    if(player.totalMoney >= player.developmentCost) {
-        player.totalMoney = player.totalMoney - player.developmentCost;
+    var devCost = player.provTypeManpower + player.provTypeTax + player.provTypeProduction;
+    if(player.totalMoney >= devCost) {
+        player.totalMoney = player.totalMoney - devCost;
         player.provTypeTax++;
-        totalDevelopment++;
         document.getElementById('pTax').innerHTML = player.provTypeTax;
         document.getElementById('totalDev').innerHTML = totalDevelopment;
-        document.getElementById('totalMoney').innerHTML = player.totalMoney;
+        document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
+        document.getElementById('income').innerHTML = player.income;
     };
-    var nextCost = Math.floor(10 * Math.pow(1.10, totalDevelopment));
+    var nextCost = Math.floor(10 * Math.pow(1.10, devCost - 3));
     document.getElementById('devCost').innerHTML = nextCost;
 };
 
@@ -230,7 +231,8 @@ function provTypeTaxIncome() {
     var provTaxIncome = 0.1;
     provTaxIncome = Math.round(provTaxIncome * player.provTypeTax);
     player.totalMoney = player.totalMoney + provTaxIncome;
-    document.getElementById('totalMoney').innerHTML = player.totalMoney;
+    document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
+    document.getElementById('income').innerHTML = player.income;
 };
 
 
@@ -242,10 +244,9 @@ function devProvTypeProduction() {
     if(player.totalMoney >= player.developmentCost) {
         player.totalMoney = player.totalMoney - player.developmentCost;
         player.provTypeProduction++;
-        totalDevelopment++;
         document.getElementById('pProduction').innerHTML = player.provTypeProduction;
         document.getElementById('totalDev').innerHTML = totalDevelopment;
-        document.getElementById('totalMoney').innerHTML = player.totalMoney;
+        document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
     };
     var nextCost = Math.floor(10 * Math.pow(1.10, totalDevelopment));
     document.getElementById('devCost').innerHTML = nextCost;
@@ -256,6 +257,7 @@ function provTypeProductionIncome() {
     var provProductionIncome = 0.1;
     provProductionIncome = provProductionIncome * player.provTypeProduction;
     player.totalMoney = player.totalMoney + provProductionIncome;
+    document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
 };
 
 
@@ -267,10 +269,9 @@ function devProvTypeManpower() {
     if(player.totalMoney >= player.developmentCost) {
         player.totalMoney = player.totalMoney - player.developmentCost;
         player.provTypeManpower++;
-        totalDevelopment++;
         document.getElementById('pManpower').innerHTML = player.provTypeManpower;
         document.getElementById('totalDev').innerHTML = totalDevelopment;
-        document.getElementById('totalMoney').innerHTML = player.totalMoney;
+        document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
     };
     var nextCost = Math.floor(10 * Math.pow(1.10, totalDevelopment));
     document.getElementById('devCost').innerHTML = nextCost;
@@ -278,14 +279,27 @@ function devProvTypeManpower() {
 
 //function of provTypeManpowerIncome
 function provTypeManpowerIncome() {
-    if (player.manpower >= player.manpowerCap) {
-        player.manpower = player.manpower - player.manpower;
-        player.manpower = player.manpower + player.manpowerCap;
-        document.getElementById('manpower').innerHTML = player.manpower.toFixed(1);
-        return;
+    if(player.manpower < player.manpowerCap) {
+        player.manpower = player.manpower + (player.provManpowerIncome * player.provTypeManpower);
+        document.getElementById('manpower').innerHTML = player.manpower.toFixed(2);
     } else {
-        player.manpower = player.manpower + player.provManpowerIncome;
+        if(player.manpower > player.manpowerCap) {
+            player.manpower = player.manpowerCap;
+            document.getElementById('manpower').innerHTML = player.manpower.toFixed(2);
+        };
     };
+};
+
+//function for increasing manpower every 10 manpower development
+function manpowerCapIncrease() {
+    var x = 10;
+    if(player.provTypeManpower >= x) {
+        var i = 1;
+        x *= i;
+        i += 1;
+        player.manpowerCap += 1;
+    };
+    document.getElementById('manpower').innerHTML = player.manpower.toFixed(2);
 };
 
 
@@ -298,8 +312,8 @@ function buyTemple() {
         player.totalMoney = player.totalMoney - player.templeCost;
         player.temple++;
         document.getElementById('temple').innerHTML = player.temple;
-        document.getElementById('totalMoney').innerHTML = player.totalMoney;
-        document.getElementById('templeIncome').innerHTML = templeIncome.toFixed(1);
+        document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
+        document.getElementById('templeIncome').innerHTML = templeIncome.toFixed(2);
     };
 };
 
@@ -309,17 +323,17 @@ function templeIncrease() {
     templeIncome = templeIncome * player.temple;
     player.totalMoney = player.totalMoney + templeIncome;
     document.getElementById('totalMoney').innerHTML = player.totalMoney;
-    document.getElementById('templeIncome').innerHTML = templeIncome.toFixed(1);
-    document.getElementById('income').innerHTML = player.income;
+    document.getElementById('templeIncome').innerHTML = templeIncome.toFixed(2);
+    document.getElementById('income').innerHTML = player.income.toFixed(2);
 };
 
 //purchase workshop
 function buyWorkshop() {
     if(player.totalMoney >= player.workshopCost) {
         player.totalMoney = player.totalMoney - player.workshopCost;
-        player.workshop = player.workshop + 1;
+        player.workshop++;
         document.getElementById('workshop').innerHTML = player.workshop;
-        document.getElementById('totalMoney').innerHTML = player.totalMoney;
+        document.getElementById('totalMoney').innerHTML = player.totalMoney.toFixed(2);
     };
 };
 
@@ -329,8 +343,8 @@ function workshopIncrease() {
     workshopIncome = workshopIncome * player.workshop;
     player.totalMoney = player.totalMoney + workshopIncome;
     document.getElementById('totalMoney').innerHTML = player.totalMoney;
-    document.getElementById('workshopIncome').innerHTML = workshopIncome.toFixed(1);
-    document.getElementById('income').innerHTML = player.income;
+    document.getElementById('workshopIncome').innerHTML = workshopIncome.toFixed(2);
+    document.getElementById('income').innerHTML = player.income.toFixed(2);
 };
 
 
@@ -356,7 +370,7 @@ function purchaseCavalry() {
 //purchase cannon
 function purchaseCannon() {
     if(player.totalMoney >= player.cannonCost) {
-        player.cannonAmount = player.cannonAmount++;
+        player.cannonAmount++;
         player.totalMoney = player.totalMoney - player.cannonCost;
     };
 };
@@ -374,6 +388,8 @@ window.setInterval(function(){
     getDev();
     getSlots();
     getMoney();
+    getIncome();
+    manpowerCapIncrease();
 }, 50);
 
 

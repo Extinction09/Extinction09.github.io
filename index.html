@@ -9,92 +9,83 @@
 
     <body>
         <sub>
-        <br>
-            <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                  <a href="#">Help</a>
-                  <a href="#">Behind The Game</a>
-                  <a href="#">Clients</a>
-                  <a href="#">Contact</a>
+            <br>
+            <br>
+            <h3>Welcome to:</h3><h2><span id="countryName"><h2>Who you gonna be?</h2></span></h2>
+            <br>
+            <p><button class="btn" onclick="generate()">Random Nation Name</button></p>
+            <br>
+            <p><span id="totalMoney">100.00</span></p>
+            <br>
+            <button class="tablink" onclick="openPage('Provinces', this, 'gray')" id="defaultOpen">Provinces</button>
+            <button class="tablink" onclick="openPage('Research', this, 'gray')" >Research</button>
+            <button class="tablink" onclick="openPage('Military', this, 'gray')">Military</button>
+            <button class="tablink" onclick="openPage('Overview', this, 'gray')">Overview</button>
+                <div id="Provinces" class="tabcontent">
+                    <h3>Provinces</h3>
+                        <p>The clay.</p>
+                        <h4>Total Provinces: </h4><p><span id="provinces">1</span>/36524</p>
+                        <br>
+                        <h4>Total Development:</h4><p><span id="totalDev">3</span></p>
+                        <h3>
+                            <table style="width:100%;table-layout:fixed;">
+                                <tr>
+                                    <th><p>Total Development</p>
+                                        <p><button class="block2" onclick="buyProvince()">Buy a Province</button></p>
+                                        <p><button class="block2" onclick="attackProvince()">Attack a Province</button></p>
+                                    </th>
+                                    <th><p>Tax Development</p>
+                                        <p><button class="block2" onclick="devProvTypeTax()">Develop Population</button></p>
+                                        <p><button class="block2" onclick="buyTemple()">Buy a Temple</button></p>
+                                    </th> 
+                                    <th><p>Production Development</p>
+                                        <p><button class="block2" onclick="devProvTypeProduction()">Develop Production</button></p>
+                                        <p><button class="block2" onclick="buyWorkshop()">Buy a Workshop</button></p>
+                                    </th>
+                                    <th><p>Military Development</p>
+                                        <p><button class="block2" onclick="devProvTypeManpower()">Develop Military</button></p>
+                                        <p><button class="block2" onclick="devProvTypeManpower()">Buy Barracks</button></p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>Development Cost: <span id="devCost">10</span></td>
+                                    <td><span id="pTax">1</span></td> 
+                                    <td><span id="pProduction">1</span></td>
+                                    <td><span id="pManpower">1</span></td>
+                                </tr>
+                                    <td>Province Cost: <span id="provCost">20</span></td>
+                                    <td>Temples: <span id="temple">0</span></td>
+                                    <td>Workshops: <span id="workshop">0</span></td>
+                                    <td>Total Manpower: <span id="manpower">0.00</span></td>
+                                <tr>
+                                    <td>Total Income: <span id="income">0.00</span></td>
+                                    <td>Temple Income: <span id="templeIncome">0.00</span></td>
+                                    <td>Workshop Income: <span id="workshopIncome">0.00</span></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Building Slots: <span id="totalSlots">20</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </h3>
                 </div>
-              </div>
-              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-        <h3>Welcome to:</h3><h2><span id="countryName"><h2>Who you gonna be?</h2></span></h2>
-        <br>
-        <p><button class="btn" onclick="generate()">Random Nation Name</button></p>
-        <br>
-        <span id="totalMoney"></span>
-        <br>
-        <button class="tablink" onclick="openPage('Provinces', this, 'gray')" id="defaultOpen">Provinces</button>
-        <button class="tablink" onclick="openPage('Research', this, 'gray')" >Research</button>
-        <button class="tablink" onclick="openPage('Military', this, 'gray')">Military</button>
-        <button class="tablink" onclick="openPage('Overview', this, 'gray')">Overview</button>
-            <div id="Provinces" class="tabcontent">
-                <h3>Provinces</h3>
-                    <p>The clay.</p>
-                    <h4>Total Provinces: </h4><p><span id="provinces">1</span>/36524</p>
-                    <br>
-                    <h4>Total Development:</h4><p><span id="totalDev">3</span></p>
-                    <h3>
-                        <table style="width:100%;table-layout:fixed;">
-                            <tr>
-                                <th><p>Total Development</p>
-                                    <p><button class="block2" onclick="buyProvince()">Buy a Province</button>
-                                    <button class="block2" onclick="attackProvince()">Attack a Province</button></p>
-                                </th>
-                                <th><p>Tax Development</p>
-                                    <p><button class="block2" onclick="devProvTypeTax()">Develop Population</button>
-                                    <button class="block2" onclick="buyTemple()">Buy a Temple</button></p>
-                                </th> 
-                                <th><p>Production Development</p>
-                                    <p><button class="block2" onclick="devProvTypeProduction()">Develop Production</button>
-                                    <button class="block2" onclick="buyWorkshop()">Buy a Workshop</button></p>
-                                </th>
-                                <th><p>Military Development</p>
-                                    <p><button class="block2" onclick="devProvTypeManpower()">Develop Military</button>
-                                    <button class="block2" onclick="devProvTypeManpower()">Buy Barracks</button></p>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td><span id="totalDev">3</span></td>
-                                <td><span id="pTax">1</span></td> 
-                                <td><span id="pProduction">1</span></td>
-                                <td><span id="pManpower">1</span></td>
-                            </tr>
-                                <td>ProvCost: <span id="provCost">100</span></td>
-                                <td>Temples: <span id="temple">0</span></td>
-                                <td>Workshops: <span id="workshop">0</span></td>
-                                <td>Total Manpower: <span id="manpower">0</span></td>
-                            <tr>
-                                <td>Total Income: <span id="income">0</span></td>
-                                <td>Temple Income: <span id="templeIncome">0</span></td>
-                                <td>Workshop Income: <span id="workshopIncome">0</span></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Building Slots: <span id="totalSlots">60</span></td>
-                                <td>Dev Cost: <span id="devCost">0</span></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </table>
-                      </h3>
-            </div>
-            <div id="Research" class="tabcontent">
-                <h3>Technologies</h3>
-                    <p>Make supersoldiers or something I don't know.</p> 
-            </div>
+                <div id="Research" class="tabcontent">
+                    <h3>Technologies</h3>
+                        <p>Make supersoldiers or something I don't know.</p> 
+                </div>
 
-            <div id="Military" class="tabcontent">
-                <h3>Military</h3>
-                    <p>When the sword is mightier than the pen.</p>
-            </div>
-            
-            <div id="Overview" class="tabcontent">
-                <h3>Overview</h3>
-                    <p>Enjoy getting to look at better countries than yours.</p>
-            </div>
+                <div id="Military" class="tabcontent">
+                    <h3>Military</h3>
+                        <p>When the sword is mightier than the pen.</p>
+                </div>
+                
+                <div id="Overview" class="tabcontent">
+                    <h3>Overview</h3>
+                        <p>Enjoy getting to look at better countries than yours.</p>
+                </div>
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
