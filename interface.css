@@ -1,0 +1,33 @@
+html {
+    background: rgb(0, 0, 0);
+}
+sub {
+    color: rgb(255, 255, 255);
+}
+div {
+    margin-bottom: 10px;
+}
+  p {
+      font-size: 16px;
+}
+button {
+    background-color: rgb(94, 94, 94);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    border: 1px solid rgb(146, 146, 146);
+}
+button:hover {
+    background-color: rgb(94, 94, 94);
+    transition: 0.2s;
+    color: white;
+}
+#logTable td{
+    padding-right:20px;
+}
+
