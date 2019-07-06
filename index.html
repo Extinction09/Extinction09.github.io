@@ -6,83 +6,142 @@
         <link rel="stylesheet" type="text/css" href="interface.css"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+        
     </head>
 
     <body>
+        <button id="infoButton">INFO</button>
+        <div id="infoBox" class="infoBut">
+            <div class="infoBox-Content">
+            <span class="close">&times;</span>
+            <span id="modalTitleFont">Thanks for playing:</span>
+            <div id="titleFont">
+                <span id="largeFont">A P</span>
+                    <span id="smallFont">irate's</span>
+                        <span id="largeFont"> L</span>
+                            <span id="smallFont">ife</span>
+                            <br>
+                            <br>
+                            <hr>
+            <span id="modalFont">About:
+                <br>
+                This is a passion project.
+            </span>
+            
+            </div>
+        </div>
+    </div>
+        <div id="titleFont"><img src="pics/pirate-ship.ico" alt="main-logo" style="width:100;height:100px;"/>
+            <span id="largeFont">A P</span>
+                <span id="smallFont">irate's</span>
+                    <span id="largeFont"> L</span>
+                        <span id="smallFont">ife</span>
+        </div>
+        <h2>Plunder 'til yer scurvy heart's content</h2>
+        <br>
+        <hr>
         <sub>
-            <table style="width:100%;table-layout:fixed;">
+            <div id="money">Amount of Reales: 
+                <span id="gold">7</span>r
+            </div>
+            <div id="inf">Total Influence: <span id="influence">0</span></div>
+            <table style="width: 100%;table-layout:fixed; align-content: center;">
                 <tr>
                     <td>
-                        <p><button onclick="buyCog()">Buy a Cog!</button></p>
+                        <div id="merOutline">
+                            Merchant Ships
+                        </div>
+                        
                     </td>
                     <td>
-                        <p><button onclick="buySchooner()">Buy a Schooner!</button></p>
+                        <div id="milOutline">
+                            Military Ships
+                        </div>
                     </td>
                     <td>
-                        <p><button onclick="buyBarq()">Buy a Barquentine!</button></p>
-                    </td>
-                    <td>
-                        <p><button onclick="buyClip()">Buy a Clipper!</button></p>
+                        <div id="landOutline">
+                            Buildings
+                        </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <p><button onclick="buyGB()">Buy a Gunboat!</button></p>
-                    </td>
-                    <td>
-                        <p><button onclick="buyBrig()">Buy a Brig!</button></p>
-                    </td>
-                  
-                </tr>
-
-            </table>
-            <p>Amount of Reales: <span id="gold">7</span></p>
-            <p>Total Influence: <span id="influence">0</span></p>
-            <table style="width:75%;table-layout:fixed;">
                 <tr>
                     <td>
                         <div id="cogOutline">
-                            <p>Number of Cogs: <span id="cogNum">0</span></p>
-                            <p>Cog Purchase Price: <span id="cogCost">7</span></p>
+                            <p><button onclick="buyCog()">Buy a Cog!</button></p>
+                            <p>Price of a Cog: <span id="cogCost">7</span>r</p>
+                            <p>Number of Cogs in yer fleet: <span id="cogNum">0</span></p>
                             <p>Cog Income: <span id="cogGain">0</span></p>
+                            <p>Influence Gain: <span id="cogInf">3</span></p>
+                        </div>
+                    </td> 
+                    <td>
+                        <div id="gunboatOutline">
+                            <p><button onclick="buyGB()">Buy a Gunboat!</button></p>
+                            <p>Price of a Gunboat: <span id="gunCost">15</span>r</p>
+                            <p>Number of Gunboats in yer fleet: <span id="gunNum">0</span></p>
+                            <p>Gunboat Income: <span id="gunGain">0</span></p>
+                            <p>Influence Gain: <span id="gunInf">5</span></p>
                         </div>
                     </td>
-                   
-                        
-                <td>
-                    <div id="gunboatOutline">
-                        <p>Number of Gunboats: <span id="gunNum">0</span></p>
-                        <p>Gunboat Purchase Price: <span id="gunCost">15</span></p>
-                        <p>Gunboat Income: <span id="gunGain">0</span></p>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="schoonerOutline">
-                    <p>Number of Schooners: <span id="schoNum">0</span></p>
-                    <p>Schooner Purchase Price: <span id="schoCost">100</span></p>
-                    <p>Schooner Income: <span id="schoGain">0</span></p>
-                    </div>
-                </td>
-                        
-                <td>
-                    <div id="barqOutline">
-                        <p>Number of Barquentines: <span id="barqNum">0</span></p>
-                        <p>Barquentine Purchase Price: <span id="barqCost">135</span></p>
-                        <p>Barqentine Income: <span id="barqGain">0</span></p>
-                    </div>
-                </td>
+                    <td>
+                        <div id="tavOutline">
+                            <p><button onclick="buyTav()">Buy a Tavern!</button></p>
+                            <p>Price of a Tavern: <span id="tavCost">15000</span>r</p>
+                            <p>Number of Taverns ye currently occupy: <span id="tavNum">0</span></p>
+                            <p>Tavern Income: <span id="tavGain">0</span></p>
+                            <p>Influence Gain: <span id="tavInf">125</span></p>
+                        </div>
+                    </td>
                 </tr>
+                <tr>
+                    <td>
+                        <div id="schoonerOutline">
+                            <p><button onclick="buySchooner()">Buy a Schooner!</button></p>
+                            <p>Price of a Schooner: <span id="schoCost">100</span>r</p>
+                            <p>Number of Schooners in yer fleet: <span id="schoNum">0</span></p>
+                            <p>Schooner Income: <span id="schoGain">0</span></p>
+                            <p>Influence Gain: <span id="schoInf">7</span></p>
+                        </div>
+                    </td>     
+                    <td>
+                        <div id="brigOutline">
+                            <p><button onclick="buyBrig()">Buy a Brig!</button></p>
+                            <p>Price of a Brig: <span id="brigCost">135</span>r</p>
+                            <p>Number of Brigs in yer fleet: <span id="brigNum">0</span></p>
+                            <p>Brig Income: <span id="brigGain">0</span></p>
+                            <p>Influence Gain: <span id="brigInf">15</span></p>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="barqOutline">
+                                <p><button onclick="buyBarq()">Buy a Barquentine!</button></p>
+                                <p>Price of a Barquentine: <span id="barqCost">2750</span>r</p>
+                                <p>Number of Barquentines in yer fleet: <span id="barqNum">0</span></p>
+                                <p>Barquentine Income: <span id="barqGain">0</span></p>
+                                <p>Influence Gain: <span id="barqInf">25</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="frigOutline">
+                                <p><button onclick="buyFrig()">Buy a Frigate!</button></p>
+                                <p>Price of a Frigate: <span id="frigCost">3125</span>r</p>
+                                <p>Number of Frigates in yer fleet: <span id="frigNum">0</span></p>
+                                <p>Frigate Income: <span id="frigGain">0</span></p>
+                                <p>Influence Gain: <span id="frigInf">55</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
 
-                <br>
-                <p></p>
-                </table>
-                <!--<div id="notEnoughMoney">Not enough Reales, me hearty!</div>
-                <div id="notEnoughInflence">Ye have too little influence, landlubber!</div> -->
+                    <br>
+                    </table>
+                    <hr>
                 <div id="eventsContainer">
                     <h3>Events</h3>
-                    <table id="logTable">
+                    <table id="logTable" style="width: 100%;table-layout:fixed;">
                         <tr id="log0"><td id="logT"></td><td id="logL"></td><td id="logR"></td></tr>
                         <tr id="log1"></tr>
                         <tr id="log2"></tr>
