@@ -1,5 +1,6 @@
 html {
     background: rgb(7, 0, 15);
+    padding: 24px;
 }
 h1 {
     font-size: 48px;
@@ -16,10 +17,9 @@ h2 {
     font-style: italic;
 }
 h3 {
-    font-size: 24px;
+    font-size: 32px;
     text-align: center;
     color: white;
-    font-style: italic;
     font-family: 'Alegreya SC';
 }
 #largeFont {
@@ -49,7 +49,7 @@ div {
     margin-bottom: 4px;
 }
 p {
-      font-size: 16px;
+      font-size: 24px;
 }
 button {
     background-color: rgb(226, 177, 41);
@@ -77,7 +77,7 @@ button:active {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 25px;
     left: 0;
     top: 0;
     width: 100%;
@@ -92,7 +92,7 @@ button:active {
     margin: auto;
     padding: 20px;
     border: 1px solid rgb(255, 255, 255);
-    width: 80%;
+    width: 85%;
     
 }
 .close {
@@ -116,10 +116,35 @@ button:active {
     font-size: 48px;
     font-family: 'Alegreya SC';
 }
+#money2 {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Alegreya SC';
+    color: rgb(226, 177, 41);
+}
+#money3 {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Alegreya SC';
+    color: rgb(226, 177, 41);
+}
 #inf {
     text-align: center;
     font-size: 30px;
     font-family: 'Alegreya SC';
+    color: rgb(155, 58, 219);
+}
+#inf2 {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Alegreya SC';
+    color: rgb(155, 58, 219);
+}
+#inf3 {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Alegreya SC';
+    color: rgb(155, 58, 219);
 }
 #modalTitleFont {
     text-align: center;
@@ -128,7 +153,28 @@ button:active {
     color: rgb(226, 177, 41);
     margin: auto;
 }
+#modal-Gre {
+    text-align: left;
+    font-size: 32px;
+    font-family: 'Alegreya SC';
+    color: rgb(63, 202, 8);
+    margin: auto;
+}
+#modal-Red {
+    text-align: left;
+    font-size: 32px;
+    font-family: 'Alegreya SC';
+    color: rgb(190, 5, 5);
+    margin: auto;
+}
 #modalFont {
+    text-align: left;
+    font-size: 32px;
+    font-family: 'Alegreya SC';
+    color: rgb(161, 161, 161);
+    margin: auto;
+}
+#modalFont2 {
     text-align: left;
     font-size: 32px;
     font-family: 'Alegreya SC';
@@ -161,10 +207,17 @@ button:active {
     font-family: 'Alegreya SC';
     font-size: 24px;
 }
-#cogOutline {
+#sloopOutline {
     font-size: 40px;
     color: white;
     font-family: 'Alegreya SC';
+    text-align: center;
+}
+#caravelOutline {
+    font-size: 40px;
+    color: white;
+    font-family: 'Alegreya SC';
+    display: none;
     text-align: center;
 }
 #gunboatOutline {
@@ -202,8 +255,22 @@ button:active {
     display: none;
     text-align: center;
 }
+#gallOutline {
+    font-size: 40px;
+    color: white;
+    font-family: 'Alegreya SC';
+    display: none;
+    text-align: center;
+}
 
 #tavOutline {
+    font-size: 40px;
+    color: white;
+    font-family: 'Alegreya SC';
+    display: none;
+    text-align: center;
+}
+#mansOutline {
     font-size: 40px;
     color: white;
     font-family: 'Alegreya SC';
