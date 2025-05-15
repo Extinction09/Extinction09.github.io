@@ -1,0 +1,59 @@
+@import "fonts.css";
+body {
+    background-color: rgb(54, 64, 73);
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 6rem;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+div {
+    padding-bottom: 1rem;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: inherit;
+    width: 100%;
+}
+
+.projects {
+    width: 100%;
+    padding: 4rem;
+    display: inline-block;
+}
+
+.selection-bar {
+    background-color: rgb(34, 34, 34);
+    position: sticky;
+    top:0;
+    height: 4rem;
+}
+
+.header {
+    background-color: rgb(34, 34, 34);
+    height: 64rem;
+    padding: 0;
+}
+
+.model-viewer {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
