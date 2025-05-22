@@ -3,9 +3,16 @@ body {
     background-color: rgb(54, 64, 73);
     align-items: center;
     margin: 0;
+    font-family: "Lexend Exa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    color: white;
 }
 
 h1 {
+    padding-left: 4rem;
+    padding-right: 4rem;
     font-size: 6rem;
     text-align: center;
     position: relative;
@@ -13,11 +20,21 @@ h1 {
 }
 
 h2 {
+    padding-left: 4rem;
+    padding-right: 4rem;
     font-size: 4rem;
 }
 
 h3 {
+    padding-left: 4rem;
+    padding-right: 4rem;
     font-size: 2rem;
+}
+
+p {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    line-height: 2;
 }
 
 div {
@@ -31,6 +48,30 @@ img {
     object-fit: cover;
     height: inherit;
     width: 100%;
+}
+
+.indent {
+    text-indent: 4rem;
+}
+
+.hook {
+    font-size: 1.75rem;
+    line-height: 0.75;
+}
+
+.details {
+    line-height: 0.5;
+}
+
+.text-container {
+    background-color: rgb(58, 58, 58);
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    width: 80%;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 
 .projects {
